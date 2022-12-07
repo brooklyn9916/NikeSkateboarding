@@ -36,7 +36,7 @@ class SepatuController extends Controller
      */
     public function store(Request $request)
     {
-        $table = sepatu::create([
+        $table = Sepatu::create([
             "nama" => $request->nama,
             "harga" => $request->harga,
             "deskripsi" => $request->deskripsi,
@@ -71,6 +71,7 @@ class SepatuController extends Controller
             ], 404);
         }
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -125,7 +126,7 @@ class SepatuController extends Controller
             $sepatu->delete();
             return response()->json([
                 'status' => 'success',
-                'message' => 'food successfully erased',
+                'message' => 'sepatu successfully erased',
             ], 200);
         }else{
             return response()->json([
